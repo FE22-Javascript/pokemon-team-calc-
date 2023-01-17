@@ -1,6 +1,10 @@
 # Pokemon Team Calculator
 Samla ihop pokémons till ett team och summera den totala combat powern.
 
+Gå efter Figma-skissen.
+
+Välja pokémon genom att klicka på ett pokémon-kort. Det skall sedan lägga sig i listan över valda pokémons och summan på CP skall räknas ut.
+
 ```
 const pokemons = [{
         id: 1,
