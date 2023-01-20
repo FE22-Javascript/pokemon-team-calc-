@@ -39,11 +39,11 @@ let availablePokemonsContainer = document.querySelector('available');
 let chosenPokemonsContainer = document.querySelector('chosen');
 
 // kallar på funktionen för att rendera pokemons ut till ui't när sidan laddas
-renderPokemonsUI();
+renderPokemonsUI(pokemons);
 
 // funktion för att rendera pokemons
-function renderPokemonsUI() {
-    pokemons.forEach(pokemon => {
+function renderPokemonsUI(list) {
+    list.forEach(pokemon => {
         let el = document.createElement('article');
         el.setAttribute('id', pokemon.id);
         el.setAttribute('class', 'pokemon');
@@ -57,3 +57,4 @@ function renderPokemonsUI() {
         document.querySelector('.available').appendChild(el)
     });
 };
+

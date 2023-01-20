@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body {
+    background-color: rgb(33, 31, 34);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    text-align: center;
+}
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 .pokemon {
     display: flex;
     flex-direction: row;
