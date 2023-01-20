@@ -1,0 +1,7 @@
+.pokemon {
+    display: flex;
+    flex-direction: row;
+}
+.pokemon img {
+    width: 100px;
+}
