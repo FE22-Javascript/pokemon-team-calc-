@@ -62,7 +62,6 @@ function renderPokemonsUI(pokemonlist, target) {
                 toArray = chosenPokemons;
                 fromArray = pokemons;
             } else {
-                console.log('hej');
                 toArray = pokemons;
                 fromArray = chosenPokemons;
             }
