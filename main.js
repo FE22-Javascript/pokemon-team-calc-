@@ -45,7 +45,6 @@ renderPokemonsUI(pokemons, 'available');
 function renderPokemonsUI(pokemonlist, target) {
     pokemonlist.forEach(pokemon => {
         let el = document.createElement('article');
-        el.setAttribute('id', pokemon.id);
         el.setAttribute('class', 'pokemon');
         el.innerHTML = `
             <img src="https://www.muraldecal.com/en/img/pokgo03-png/folder/products-detalle-png/stickers-poke-ball---pokemon.png" alt="${pokemon.name}">
