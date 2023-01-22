@@ -95,4 +95,4 @@ function countCP() {
         sum = sum + pokemon.cp;
     });
     return sum;
-}
+};

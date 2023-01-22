@@ -1,21 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
     background-color: rgb(33, 31, 34);
     color: white;
     font-family: 'Roboto', sans-serif;
 }
+h1 {
+    font-weight: bold;
+}
+h2, p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: lighter;
+}
+
+h3 {
+    margin-block-start: -1rem;
+}
+
+h4 {
+    text-align: end;
+}
+
 header {
     text-align: center;
+    margin-bottom: 3rem;
 }
 main {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.list-title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
 .pokemon {
     display: flex;
     flex-direction: row;
+    background-color: #e2e1e4;
+    border-radius: 5px;
+    color: black;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
 }
 .pokemon img {
     width: 100px;
+}
+.pokemon section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 0.4rem;
 }
