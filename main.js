@@ -35,15 +35,15 @@ const pokemons = [{
 },
 ];
 let chosenPokemons = [];
-let availablePokemonsContainer = document.querySelector('available');
-let chosenPokemonsContainer = document.querySelector('chosen');
+let availablePokemonsContainer = document.querySelector('.available');
+let chosenPokemonsContainer = document.querySelector('.chosen');
 
 // kallar på funktionen för att rendera pokemons ut till ui't när sidan laddas
-renderPokemonsUI(pokemons);
+renderPokemonsUI(pokemons, 'available');
 
 // funktion för att rendera pokemons
-function renderPokemonsUI(list) {
-    list.forEach(pokemon => {
+function renderPokemonsUI(pokemonlist, target) {
+    pokemonlist.forEach(pokemon => {
         let el = document.createElement('article');
         el.setAttribute('id', pokemon.id);
         el.setAttribute('class', 'pokemon');
@@ -54,7 +54,47 @@ function renderPokemonsUI(list) {
                 <p>${pokemon.cp} CP</p>
             </section>
         `;
-        document.querySelector('.available').appendChild(el)
+        // lägg på eventlyssnare på varje pokemon
+        el.addEventListener('click', () => {
+            let toArray;
+            let fromArray;
+            if (target === 'available') {
+                toArray = chosenPokemons;
+                fromArray = pokemons;
+            } else {
+                console.log('hej');
+                toArray = pokemons;
+                fromArray = chosenPokemons;
+            }
+            handleClickedPokemon(fromArray, toArray, pokemon);
+            updateUI();
+        });
+        document.querySelector(`.${target}`).appendChild(el);
     });
 };
 
+function handleClickedPokemon(fromArray, toArray, pokemon) {
+    // hitta vart pokemonen ligger i listan som den skall tas ifrån
+    let index = fromArray.findIndex((p) => p.id === pokemon.id);
+    fromArray.splice(index, 1);
+    // pusha pokemonen till nya listan
+    toArray.push(pokemon);
+};
+
+function updateUI() {
+    // töm listorna i UI't
+    availablePokemonsContainer.innerHTML = "";
+    chosenPokemonsContainer.innerHTML = "";
+    // lägg in pokemons i de olika listorna i UI't
+    renderPokemonsUI(pokemons, 'available');
+    renderPokemonsUI(chosenPokemons, 'chosen');
+    document.querySelector('.total').innerHTML = countCP();
+};
+
+function countCP() {
+    let sum = 0;
+    chosenPokemons.forEach((pokemon) => {
+        sum = sum + pokemon.cp;
+    });
+    return sum;
+}
