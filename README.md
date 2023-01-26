@@ -17,6 +17,8 @@ Summera varje Pokémons CP och skriv ut i din HTML
 ## Steg 4
 Man ska kunna klicka på de valda Pokémonsen i sin list och så åker de tillbaka till den första listan istället
 
+## Listan
+
 ```
 const pokemons = [{
         id: 1,
